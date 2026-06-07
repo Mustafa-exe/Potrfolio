@@ -22,6 +22,11 @@
     min-height: auto !important;
   }
   
+  /* Fix page padding */
+  .page[style*="padding: 4rem 0"] {
+    padding: 3rem 0 !important;
+  }
+  
   /* Ensure all sections are visible */
   .sec {
     display: block !important;
@@ -50,6 +55,35 @@
   .gc {
     max-width: 100% !important;
   }
+  
+  /* Fix inline padding styles on cards */
+  [style*="padding: 2rem"] {
+    padding: 1.5rem !important;
+  }
+  
+  [style*="padding: 1.8rem"] {
+    padding: 1.4rem !important;
+  }
+  
+  /* Fix inline grid styles */
+  [style*="gridTemplateColumns: repeat(auto-fill, minmax(260px"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Contact page email size */
+  .ce {
+    font-size: clamp(1.3rem, 5vw, 2.2rem) !important;
+  }
+  
+  /* About page avatar/card */
+  [style*="width: 120px; height: 120px"] {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  [style*="fontSize: 2.2rem"] {
+    font-size: 1.8rem !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -64,13 +98,21 @@
     padding-bottom: 2.5rem !important;
   }
   
+  .page[style*="padding: 4rem 0"], 
+  .page[style*="padding: 3rem 0"] {
+    padding: 2.5rem 0 !important;
+  }
+  
   .w {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
   
   /* Smaller padding for cards */
-  .gc {
+  .gc, 
+  [style*="padding: 2rem"],
+  [style*="padding: 1.8rem"],
+  [style*="padding: 1.5rem"] {
     padding: 1.2rem !important;
   }
   
@@ -78,5 +120,26 @@
   h2, h3, .st, .p-name {
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
+  }
+  
+  /* Smaller avatar on small phones */
+  [style*="width: 120px; height: 120px"],
+  [style*="width: 100px; height: 100px"] {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  
+  [style*="fontSize: 2.2rem"],
+  [style*="fontSize: 1.8rem"] {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Contact page */
+  .ce {
+    font-size: clamp(1.1rem, 6vw, 1.8rem) !important;
+  }
+  
+  [style*="margin: 2rem auto"] {
+    margin: 1.5rem auto !important;
   }
 }

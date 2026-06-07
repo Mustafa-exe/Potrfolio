@@ -1,1 +1,39 @@
-/* Projects styling is integrated into index.css */
+/* Projects page mobile responsive fixes */
+
+.projects-filters {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.projects-filters::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .projects-filters {
+    gap: 1rem !important;
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .projects-filters button {
+    font-size: 11px !important;
+    padding: 0.4rem 0.15rem !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-filters {
+    gap: 0.8rem !important;
+  }
+  
+  .projects-filters button {
+    font-size: 10px !important;
+    padding: 0.35rem 0.1rem !important;
+  }
+}

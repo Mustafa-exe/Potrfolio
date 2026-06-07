@@ -45,7 +45,18 @@
 }
 
 /* Mobile responsive */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .about-grid {
+    gap: 2rem;
+  }
+  
   .about-timeline {
     padding-left: 1.2rem;
     gap: 0.6rem;
@@ -56,6 +67,15 @@
     height: 8px;
     left: -1.2rem;
     top: 1rem;
+  }
+  
+  /* Fix inline styles on mobile */
+  [style*="gridTemplateColumns: repeat(auto-fill, minmax(260px"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  [style*="gridTemplateColumns: repeat(auto-fit, minmax(120px"] {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
@@ -73,5 +93,10 @@
     height: 7px;
     left: -1rem;
     top: 0.8rem;
+  }
+  
+  /* Single column for stats */
+  [style*="gridTemplateColumns: repeat(auto-fit, minmax(120px"] {
+    grid-template-columns: 1fr !important;
   }
 }
