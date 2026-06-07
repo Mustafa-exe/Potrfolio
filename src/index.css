@@ -100,6 +100,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .scroll-l{width:40px;height:1px;background:linear-gradient(to right,var(--ice),transparent);animation:sp 2.5s ease-in-out infinite}
 @keyframes sp{0%,100%{opacity:.2}50%{opacity:1}}
 
+/* Mobile hero padding adjustments */
+@media(max-width:1024px){
+  #hero{padding:7rem 2rem 4rem}
+}
+
+@media(max-width:768px){
+  #hero{padding:5rem 1.5rem 3rem;min-height:auto}
+}
+
+@media(max-width:480px){
+  #hero{padding:4.5rem 1rem 2.5rem}
+}
+
 /* SECTION */
 .sec{padding:6rem 0;width:100%;box-sizing:border-box;overflow-x:hidden;position:relative;z-index:2}
 .sh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border);gap:1rem;flex-wrap:wrap}
@@ -231,7 +244,6 @@ footer{padding:1.8rem 3rem;border-top:1px solid var(--border);display:flex;justi
 /* Tablet and below */
 @media(max-width:1024px){
   .w{padding:0 2rem}
-  #hero{padding:8rem 2rem 4rem}
   .h-name{font-size:clamp(2.8rem,8vw,6rem)}
   .h-bio{font-size:.9rem;max-width:100%}
   .h-kpis{gap:2rem;flex-wrap:wrap}
@@ -255,7 +267,6 @@ footer{padding:1.8rem 3rem;border-top:1px solid var(--border);display:flex;justi
   .fb-pill{font-size:9px;padding:.2rem .6rem}
   .n-admin{font-size:10px;padding:.32rem .9rem}
   .w{padding:0 1.5rem}
-  #hero{padding:7rem 1.5rem 3rem;min-height:auto}
   .h-eye{font-size:10px;letter-spacing:.18em;margin-bottom:1rem}
   .h-name{font-size:clamp(2.2rem,11vw,4.5rem);margin-bottom:1.2rem}
   .h-bio{font-size:.88rem;margin-bottom:2rem;line-height:1.8}
@@ -324,7 +335,6 @@ footer{padding:1.8rem 3rem;border-top:1px solid var(--border);display:flex;justi
   .fb-pill{display:none}
   .n-admin{font-size:9px;padding:.28rem .7rem}
   .w{padding:0 1rem}
-  #hero{padding:6rem 1rem 2.5rem}
   .h-eye{font-size:9px;margin-bottom:.8rem}
   .h-name{font-size:clamp(1.8rem,13vw,3.5rem);letter-spacing:-.03em}
   .h-bio{font-size:.85rem;line-height:1.75}
@@ -412,7 +422,7 @@ main {
 
 @media (max-width: 1024px) {
   .page-container {
-    padding-top: 4.5rem;
+    padding-top: 4rem;
   }
   .about-grid {
     grid-template-columns: 1fr;
@@ -422,7 +432,7 @@ main {
 
 @media (max-width: 768px) {
   .page-container {
-    padding-top: 4rem;
+    padding-top: 3.5rem;
     min-height: calc(100vh - 100px);
   }
   .about-grid {
@@ -433,7 +443,7 @@ main {
 
 @media (max-width: 480px) {
   .page-container {
-    padding-top: 3.5rem;
+    padding-top: 3rem;
   }
 }
 

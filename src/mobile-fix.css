@@ -22,6 +22,11 @@
     box-sizing: border-box !important;
   }
   
+  /* Reduce top padding on mobile */
+  #hero {
+    padding-top: 5rem !important;
+  }
+  
   /* Ensure all sections are visible */
   .sec {
     display: block !important;
@@ -103,6 +108,11 @@
 }
 
 @media (max-width: 480px) {
+  /* Even less padding on small phones */
+  #hero {
+    padding-top: 4.5rem !important;
+  }
+  
   .w {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
