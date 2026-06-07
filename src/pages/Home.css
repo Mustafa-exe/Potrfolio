@@ -1,1 +1,76 @@
-/* Home page styling is integrated into index.css */
+/* Home page mobile responsive fixes */
+
+/* Ensure sections don't overflow */
+.sec {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Ensure framer-motion elements are visible */
+[style*="opacity: 0"] {
+  animation: none !important;
+}
+
+/* Fix inline styles on mobile */
+@media (max-width: 768px) {
+  /* Override inline padding for CTA banner */
+  .gc[style*="padding"] {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  /* Fix button container wrapping */
+  div[style*="display: flex"][style*="gap: 1rem"] {
+    flex-wrap: wrap !important;
+  }
+  
+  /* Ensure text in CTA is readable */
+  p[style*="max-width: 460px"] {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  /* Fix section header buttons */
+  .sh .btn-o {
+    padding: .45rem 1rem !important;
+    font-size: 10px !important;
+    white-space: nowrap;
+  }
+  
+  /* Ensure all sections are visible */
+  .sec {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .gc[style*="padding"] {
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .sh .btn-o {
+    padding: .4rem .9rem !important;
+    font-size: 9.5px !important;
+  }
+  
+  /* Ensure KPIs wrap properly */
+  .h-kpis > div {
+    flex: 1 1 calc(50% - 0.75rem);
+    min-width: 0;
+  }
+}
+
+/* Fix hero content on very small screens */
+@media (max-width: 360px) {
+  .h-kpis {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .h-kpis > div {
+    width: 100%;
+    text-align: center;
+    flex: 1 1 100%;
+  }
+}
