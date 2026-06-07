@@ -151,6 +151,25 @@
       box-sizing: border-box;
     }
   }
+
+  @media (max-width: 480px) {
+    gap: 6px;
+    margin-top: 16px;
+
+    li {
+      flex: 1 1 100%;
+    }
+
+    a {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+
+    .logo, .button-icon {
+      height: 16px;
+      width: 16px;
+    }
+  }
 }
 
 #spacer {

@@ -43,3 +43,35 @@
   background: var(--ice);
   box-shadow: 0 0 10px rgba(168, 212, 245, 0.3);
 }
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .about-timeline {
+    padding-left: 1.2rem;
+    gap: 0.6rem;
+  }
+  
+  .about-timeline-dot {
+    width: 8px;
+    height: 8px;
+    left: -1.2rem;
+    top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-timeline {
+    padding-left: 1rem;
+  }
+  
+  .about-timeline::before {
+    left: 3px;
+  }
+  
+  .about-timeline-dot {
+    width: 7px;
+    height: 7px;
+    left: -1rem;
+    top: 0.8rem;
+  }
+}
