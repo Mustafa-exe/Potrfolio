@@ -7,11 +7,6 @@
   overflow-x: hidden;
 }
 
-/* Ensure framer-motion elements are visible */
-[style*="opacity: 0"] {
-  animation: none !important;
-}
-
 /* Fix inline styles on mobile */
 @media (max-width: 768px) {
   /* Override inline padding for CTA banner */
@@ -35,12 +30,6 @@
     padding: .45rem 1rem !important;
     font-size: 10px !important;
     white-space: nowrap;
-  }
-  
-  /* Ensure all sections are visible */
-  .sec {
-    opacity: 1 !important;
-    transform: none !important;
   }
 }
 
