@@ -4,6 +4,16 @@
    ═══════════════════════════════════════════ */
 
 @media (max-width: 768px) {
+  /* Fix navbar overflow */
+  nav {
+    overflow: visible !important;
+  }
+  
+  /* Prevent Mustafa from breaking */
+  .h-name {
+    white-space: nowrap !important;
+  }
+  
   /* Reduce top padding on mobile */
   #hero {
     padding-top: 5rem !important;
@@ -59,7 +69,7 @@
   }
   
   /* Ensure text doesn't overflow */
-  h1, h2, h3, .h-name, .st, .p-name {
+  h2, h3, .st, .p-name {
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
   }
