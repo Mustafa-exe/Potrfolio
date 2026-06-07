@@ -1,0 +1,131 @@
+/* ═══════════════════════════════════════════
+   MOBILE FIX - Critical overrides for mobile view
+   Import this LAST to ensure it takes precedence
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Ensure all containers are width-aware */
+  *,
+  *::before,
+  *::after {
+    max-width: 100vw;
+  }
+  
+  /* Force main containers to be visible and properly sized */
+  main,
+  .page-container,
+  .page,
+  #root {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Ensure all sections are visible */
+  .sec {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  
+  /* Fix framer-motion hidden elements */
+  .sec > div,
+  .sec > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  /* Ensure grids don't overflow */
+  .pg,
+  .sg,
+  .el {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Force section headers to wrap properly */
+  .sh {
+    flex-wrap: wrap !important;
+    width: 100% !important;
+  }
+  
+  /* Ensure wrapper doesn't cause issues */
+  .w {
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  /* Fix hero section */
+  #hero {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  
+  .h-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Ensure cards don't overflow */
+  .gc {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Fix any transform issues */
+  [style*="transform"] {
+    transform: none !important;
+  }
+  
+  /* Ensure no fixed positioning breaks layout */
+  *:not(nav):not(#cur):not(#cur-r):not(#bgc):not(#toast) {
+    position: relative !important;
+  }
+  
+  nav,
+  #cur,
+  #cur-r,
+  #bgc,
+  #loader,
+  #toast {
+    position: fixed !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .w {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Smaller padding for cards */
+  .gc {
+    padding: 1.2rem !important;
+  }
+  
+  /* Ensure text doesn't overflow */
+  h1, h2, h3, .h-name, .st, .p-name {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+}
+
+/* Disable problematic animations on mobile */
+@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

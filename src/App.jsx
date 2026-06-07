@@ -10,6 +10,7 @@ import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
+import "./mobile-fix.css";
 
 function App() {
   return (
