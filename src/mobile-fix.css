@@ -9,9 +9,10 @@
     overflow: visible !important;
   }
   
-  /* Prevent Mustafa from breaking */
+  /* Fix hero name sizing for mobile - smaller font to prevent overflow */
   .h-name {
-    white-space: nowrap !important;
+    font-size: clamp(2rem, 10vw, 4rem) !important;
+    line-height: 1 !important;
   }
   
   /* Reduce top padding on mobile */
@@ -52,6 +53,11 @@
 }
 
 @media (max-width: 480px) {
+  /* Smaller hero name on small phones */
+  .h-name {
+    font-size: clamp(1.8rem, 11vw, 3.5rem) !important;
+  }
+  
   /* Even less padding on small phones */
   #hero {
     padding-top: 4.5rem !important;

@@ -86,11 +86,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .h-eye{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ice);margin-bottom:1.5rem;opacity:0;animation:fu .9s ease .3s forwards}
 .h-name{font-family:var(--fd);font-size:clamp(3.8rem,9vw,8.5rem);font-weight:800;line-height:.92;letter-spacing:-.035em;margin-bottom:1.8rem;opacity:0;animation:fu .9s ease .5s forwards;word-wrap:break-word;overflow-wrap:break-word}
 .h-name .dim{color:rgba(194,207,224,.4)}
-
-/* Prevent name from breaking mid-word */
-@media(max-width:768px){
-  .h-name{white-space:nowrap;overflow:visible}
-}
 .h-bio{max-width:430px;font-size:.95rem;color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:2.8rem;opacity:0;animation:fu .9s ease .7s forwards}
 .h-cta{display:flex;gap:1rem;align-items:center;opacity:0;animation:fu .9s ease .9s forwards;flex-wrap:wrap}
 .btn-i{padding:.7rem 2rem;background:var(--ice);color:var(--bg);font-family:var(--fd);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:none;border-radius:5px;cursor:none;transition:opacity .2s,transform .2s;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
