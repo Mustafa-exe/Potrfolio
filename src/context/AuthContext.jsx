@@ -51,6 +51,7 @@ export function AuthProvider({ children }) {
           setLoginError("");
           return true;
         } catch (error) {
+          console.error("Firebase Auth Error:", error);
           const newAttempts = loginAttempts + 1;
           setLoginAttempts(newAttempts);
           if (newAttempts >= MAX_ATTEMPTS) {
