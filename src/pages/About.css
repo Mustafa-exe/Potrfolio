@@ -1,0 +1,45 @@
+/* About page — additional styles */
+
+.about-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.about-timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--ice), var(--border), transparent);
+}
+
+.about-timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  position: relative;
+}
+
+.about-timeline-dot {
+  position: absolute;
+  left: -1.5rem;
+  top: 1.4rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--ice);
+  z-index: 2;
+  flex-shrink: 0;
+  transform: translateX(0.5px);
+}
+
+.about-timeline-item:first-child .about-timeline-dot {
+  background: var(--ice);
+  box-shadow: 0 0 10px rgba(168, 212, 245, 0.3);
+}

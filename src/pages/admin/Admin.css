@@ -1,0 +1,391 @@
+/* ===== ADMIN LOGIN PAGE ===== */
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.admin-login-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.admin-login-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(11, 18, 33, 0.65);
+  border: 1px solid rgba(168, 212, 245, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem 2.2rem 2rem;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(168, 212, 245, 0.03),
+    inset 0 1px 0 rgba(168, 212, 245, 0.06);
+  text-align: left;
+}
+
+.admin-login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.admin-login-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(168, 212, 245, 0.12), rgba(74, 128, 176, 0.08));
+  border: 1px solid rgba(168, 212, 245, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  color: var(--ice);
+}
+
+.admin-login-header h2 {
+  font-family: var(--fd);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--ice);
+  letter-spacing: -0.02em;
+}
+
+.admin-login-header p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ===== ADMIN LOGIN FORM ===== */
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--silver);
+}
+
+/* ── Form Input ── */
+.form-input {
+  width: 100%;
+  padding: 0.72rem 0.95rem;
+  background: rgba(168, 212, 245, 0.04);
+  border: 1px solid rgba(168, 212, 245, 0.12);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--fb);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-input::placeholder {
+  color: rgba(220, 232, 245, 0.28);
+  font-size: 13px;
+}
+
+.form-input:hover {
+  border-color: rgba(168, 212, 245, 0.22);
+  background: rgba(168, 212, 245, 0.06);
+}
+
+.form-input:focus {
+  border-color: var(--ice);
+  box-shadow: 0 0 0 3px rgba(168, 212, 245, 0.08), 0 0 16px rgba(168, 212, 245, 0.06);
+  background: rgba(168, 212, 245, 0.06);
+}
+
+/* ── Password toggle ── */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper .form-input {
+  padding-right: 44px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+
+.password-toggle:hover {
+  color: var(--ice);
+}
+
+.password-toggle svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+/* ── Login Error ── */
+.login-error {
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.18);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 13px;
+  color: #ff6b6b;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ── Login Button Override ── */
+.admin-login-form .btn.btn-primary {
+  width: 100%;
+  padding: 0.78rem 2rem;
+  background: var(--ice);
+  color: var(--bg);
+  font-family: var(--fd);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  cursor: none;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.3s;
+  margin-top: 0.4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-login-form .btn.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.admin-login-form .btn.btn-primary:hover::after {
+  opacity: 1;
+}
+
+.admin-login-form .btn.btn-primary:hover {
+  box-shadow: 0 4px 20px rgba(168, 212, 245, 0.25), 0 0 40px rgba(168, 212, 245, 0.08);
+}
+
+.admin-login-form .btn.btn-primary:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ── Footer ── */
+.admin-login-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(168, 212, 245, 0.06);
+}
+
+.admin-login-footer a {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.admin-login-footer a:hover {
+  color: var(--ice);
+}
+
+/* ── Firebase Config Hint ── */
+.firebase-hint {
+  background: rgba(168, 212, 245, 0.04);
+  border: 1px solid rgba(168, 212, 245, 0.08);
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.firebase-hint p {
+  font-size: 11px;
+  color: var(--faint);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.firebase-hint code {
+  font-size: 10px;
+  background: rgba(168, 212, 245, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  color: var(--muted);
+}
+
+/* ===== ADMIN DASHBOARD ===== */
+.admin-dashboard-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.dashboard-panel {
+  background: rgba(11, 18, 33, 0.7);
+  border: 1px solid rgba(168, 212, 245, 0.1);
+  border-radius: 16px;
+  width: 720px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(168, 212, 245, 0.02),
+    inset 0 1px 0 rgba(168, 212, 245, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  text-align: left;
+}
+
+.dashboard-panel-header {
+  padding: 1.4rem 2rem;
+  border-bottom: 1px solid rgba(168, 212, 245, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard-title {
+  font-family: var(--fd);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.dashboard-logout-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 80, 80, 0.2);
+  color: rgba(255, 110, 110, 0.75);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.38rem 0.9rem;
+  border-radius: 6px;
+  cursor: none;
+  transition: all 0.2s;
+  font-family: var(--fb);
+}
+
+.dashboard-logout-btn:hover {
+  background: rgba(255, 60, 60, 0.08);
+  color: rgba(255, 140, 140, 1);
+  border-color: rgba(255, 80, 80, 0.35);
+}
+
+.dashboard-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(168, 212, 245, 0.08);
+  overflow-x: auto;
+}
+
+.dashboard-tab-btn {
+  padding: 0.78rem 1.4rem;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  cursor: none;
+  transition: all 0.2s;
+  font-family: var(--fb);
+  margin-bottom: -1px;
+  white-space: nowrap;
+}
+
+.dashboard-tab-btn.active {
+  color: var(--ice);
+  border-bottom-color: var(--ice);
+}
+
+.dashboard-tab-btn:hover {
+  color: var(--text);
+}
+
+.dashboard-body {
+  padding: 2rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.dashboard-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dashboard-body::-webkit-scrollbar-thumb {
+  background: rgba(168, 212, 245, 0.12);
+  border-radius: 2px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .admin-login-card {
+    padding: 2rem 1.5rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .admin-dashboard-page {
+    padding: 2rem 1rem;
+  }
+
+  .dashboard-panel-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .dashboard-body {
+    padding: 1.5rem;
+  }
+
+  .dashboard-panel {
+    border-radius: 12px;
+  }
+}
